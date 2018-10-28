@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>fortiGO-SignUp</title>
+    <link rel = "stylesheet"
+   type = "text/css"
+   href ="{% static 'Truck/signup.css' %}">
+  </head>
+  <body>
+<!---    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{messages.tags}}">
+      {{message}}
+
+    </div>
+    {% endfor %}
+    {% endif %}--->
+<form class="" action="register/" method="post">
+{% csrf_token %}
+<div class="content">
+  <div class="title">Create account</div>
+  <input type="email" placeholder="E-mail" name = "email" required/>
+  <input type="password" placeholder="Password" name = "password" required/>
+  <input type="text" placeholder="Name" name = "name" required/>
+  <input type="number" placeholder="Pincode" name = "pincode" required/>
+  <input type="checkbox" id="rememberMe" required/>
+  <label for="rememberMe"></label><span>I have read and agree to the <a href="#">Terms of Use </a>and <a href="#">Privacy Policy</a></span>
+  <button>Create Account</button>
+  <!---<div class="social"> <span>or sign up with social media</span></div>
+  <div class="buttons">
+    <button class="facebook"><i class="fa fa-facebook"></i>Facebook</button>
+    <button class="twitter"><i class="fa fa-twitter"></i>Twitter</button>
+    <button class="google"><i class="fa fa-google-plus"></i>Google</button>
+  </div>--->
+  <div class="already">Already have an account? <a href="#">Sign In</a></div>
+</div>
+</form>
+
+  </body>
+</html>
